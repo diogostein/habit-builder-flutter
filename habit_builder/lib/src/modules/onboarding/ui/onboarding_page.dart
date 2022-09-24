@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:habit_builder/src/modules/onboarding/ui/widgets/pages/create_habit_page_view_item.dart';
 import 'package:habit_builder/src/modules/onboarding/ui/widgets/pages/join_community_page_view_item.dart';
 import 'package:habit_builder/src/modules/onboarding/ui/widgets/pages/keep_track_page_view_item.dart';
@@ -37,7 +38,7 @@ class _OnboardingPageState extends State<OnboardingPage>
   _onPageChanged(index) {
     _tabController?.animateTo(
       index,
-      duration: const Duration(milliseconds: 300),
+      duration: HBAnimDuration.normal,
     );
     setState(() => _currentPageIndex = index);
   }
@@ -70,12 +71,12 @@ class _OnboardingPageState extends State<OnboardingPage>
                 crossFadeState: _currentPageIndex < 3
                     ? CrossFadeState.showFirst
                     : CrossFadeState.showSecond,
-                duration: const Duration(milliseconds: 200),
+                duration: HBAnimDuration.fast,
                 firstChild: OnboardingNavigation(
                   tabController: _tabController,
-                  onSkipPressed: () {},
+                  onSkipPressed: () => Modular.to.navigate('/authentication'),
                   onNextPressed: () => _pageController?.nextPage(
-                    duration: const Duration(milliseconds: 300),
+                    duration: HBAnimDuration.normal,
                     curve: Curves.easeInOut,
                   ),
                 ),
@@ -83,7 +84,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                   width: double.infinity,
                   child: HBButton(
                     'Get Started',
-                    onPressed: () {},
+                    onPressed: () => Modular.to.navigate('/authentication'),
                   ),
                 ),
               ),

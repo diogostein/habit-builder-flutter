@@ -6,6 +6,8 @@ abstract class HBColors {
   static const fog = Color(0xFFFFDEEF);
   static const twilight = Color(0xFF29319F);
   static const sunset = Color(0xFFF65B4E);
+
+  static const background = Color(0xFFFFF3E9);
 }
 
 abstract class HBMaterialColors {
