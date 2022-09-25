@@ -35,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
@@ -44,6 +45,26 @@ class _LoginPageState extends State<LoginPage> {
                   child: HBText.headline2(
                     'Welcome to monumental habits',
                     textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: HBSpacings.xLarge),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: HBSpacings.regular,
+                  ),
+                  child: HBSocialButton.google(
+                    'Continue with Google',
+                    onPressed: () {},
+                  ),
+                ),
+                const SizedBox(height: HBSpacings.xSmall),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: HBSpacings.regular,
+                  ),
+                  child: HBSocialButton.facebook(
+                    'Continue with Facebook',
+                    onPressed: () {},
                   ),
                 ),
               ],

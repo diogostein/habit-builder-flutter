@@ -5,3 +5,7 @@ abstract class HBIllustrations {
   static const manChart = 'lib/assets/illustrations/man_chart.png';
   static const manBonfire = 'lib/assets/illustrations/man_bonfire.png';
 }
+
+abstract class HBSvgIcons {
+  static const google = 'lib/assets/icons/google.svg';
+}

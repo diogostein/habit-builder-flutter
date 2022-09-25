@@ -43,6 +43,16 @@ abstract class HBButtonStyles {
     ),
   );
 
+  static final socialButton = ElevatedButton.styleFrom(
+    primary: Colors.white,
+    textStyle: HBTextStyles.body.copyWith(fontWeight: FontWeight.bold),
+    elevation: 0,
+    minimumSize: const Size(0, 48),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(HBBorderRadius.socialButton),
+    ),
+  );
+
   static final textButton = TextButton.styleFrom(
     primary: HBMaterialColors.secondarySwatch,
     textStyle: HBTextStyles.body.copyWith(fontWeight: FontWeight.bold),

@@ -12,4 +12,5 @@ abstract class HBSpacings {
 
 abstract class HBBorderRadius {
   static const button = 8.0;
+  static const socialButton = 12.0;
 }

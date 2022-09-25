@@ -8,6 +8,7 @@ abstract class HBColors {
   static const sunset = Color(0xFFF65B4E);
 
   static const background = Color(0xFFFFF3E9);
+  static const facebook = Color(0xFF1772EA);
 }
 
 abstract class HBMaterialColors {
