@@ -41,3 +41,23 @@ class HBTextButton extends StatelessWidget {
     );
   }
 }
+
+class HBLinkButton extends StatelessWidget {
+  final String data;
+  final VoidCallback onPressed;
+
+  const HBLinkButton(
+    this.data, {
+    super.key,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      style: HBButtonStyles.linkButton,
+      child: Text(data),
+    );
+  }
+}

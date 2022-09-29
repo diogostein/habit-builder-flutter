@@ -9,5 +9,6 @@ export 'atomic/molecules/text_form_field.dart';
 export 'atomic/tokens/animations.dart';
 export 'atomic/tokens/assets.dart';
 export 'atomic/tokens/colors.dart';
+export 'atomic/tokens/decorations.dart';
 export 'atomic/tokens/dimensions.dart';
 export 'atomic/tokens/styles.dart';
