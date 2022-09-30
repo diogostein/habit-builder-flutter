@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HBTextFormField extends StatefulWidget {
   final String? hintText;
@@ -12,9 +13,13 @@ class HBTextFormField extends StatefulWidget {
   final bool? enableInteractiveSelection;
   final TextEditingController? controller;
   final Color? backgroundColor;
+  final VoidCallback? onEditingComplete;
+  final FocusNode? focusNode;
+  final List<TextInputFormatter>? inputFormatters;
+  final FormFieldValidator<String>? validator;
 
   const HBTextFormField({
-    Key? key,
+    super.key,
     this.hintText,
     this.prefixIcon,
     this.obscureText = false,
@@ -25,12 +30,34 @@ class HBTextFormField extends StatefulWidget {
     this.enableInteractiveSelection,
     this.controller,
     this.backgroundColor,
-  }) : super(key: key);
+    this.onEditingComplete,
+    this.focusNode,
+    this.inputFormatters,
+    this.validator,
+  });
+
+  const HBTextFormField.email({
+    super.key,
+    this.hintText = 'Email',
+    this.prefixIcon = Icons.email_outlined,
+    this.obscureText = false,
+    this.keyboardType = TextInputType.emailAddress,
+    this.textInputAction,
+    this.autofocus = false,
+    this.enableSuggestions = true,
+    this.enableInteractiveSelection = true,
+    this.controller,
+    this.backgroundColor,
+    this.onEditingComplete,
+    this.focusNode,
+    this.inputFormatters,
+    this.validator,
+  });
 
   const HBTextFormField.password({
     super.key,
-    this.hintText,
-    this.prefixIcon,
+    this.hintText = 'Password',
+    this.prefixIcon = Icons.lock_outline,
     this.obscureText = true,
     this.keyboardType,
     this.textInputAction,
@@ -39,6 +66,10 @@ class HBTextFormField extends StatefulWidget {
     this.enableInteractiveSelection = false,
     this.controller,
     this.backgroundColor,
+    this.onEditingComplete,
+    this.focusNode,
+    this.inputFormatters,
+    this.validator,
   });
 
   @override
@@ -58,11 +89,10 @@ class _HBTextFormFieldState extends State<HBTextFormField> {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onFocusChange: (hasFocus) {
-        setState(() => _hasFocus = hasFocus);
-      },
+      onFocusChange: (hasFocus) => setState(() => _hasFocus = hasFocus),
       child: TextFormField(
         controller: widget.controller,
+        focusNode: widget.focusNode,
         keyboardType: widget.keyboardType,
         textInputAction: widget.textInputAction,
         autofocus: widget.autofocus,
@@ -71,6 +101,9 @@ class _HBTextFormFieldState extends State<HBTextFormField> {
         obscureText: _obscureText,
         obscuringCharacter: '●',
         style: HBTextStyles.textFormField,
+        onEditingComplete: widget.onEditingComplete,
+        inputFormatters: widget.inputFormatters,
+        validator: widget.validator,
         decoration: HBDecorations.inputDecoration.copyWith(
           fillColor: widget.backgroundColor,
           hintText: widget.hintText,
@@ -90,9 +123,7 @@ class _HBTextFormFieldState extends State<HBTextFormField> {
               : null,
           suffix: widget.obscureText
               ? InkWell(
-                  onTap: () {
-                    setState(() => _obscureText = !_obscureText);
-                  },
+                  onTap: () => setState(() => _obscureText = !_obscureText),
                   child: Text(
                     _obscureText ? 'Show' : 'Hide',
                     style: const TextStyle(

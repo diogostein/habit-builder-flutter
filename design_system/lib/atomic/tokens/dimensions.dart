@@ -29,4 +29,5 @@ abstract class HBFontSizes {
 
   static const headline1 = 40.0;
   static const headline2 = 32.0;
+  static const headline3 = 24.0;
 }

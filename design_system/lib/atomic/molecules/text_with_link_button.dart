@@ -1,10 +1,18 @@
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class SignUp extends StatelessWidget {
-  final VoidCallback? onTap;
+import '../../design_system.dart';
 
-  const SignUp({Key? key, this.onTap}) : super(key: key);
+class HBTextWithLinkButton extends StatelessWidget {
+  final String text;
+  final String linkText;
+  final VoidCallback onLinkTap;
+
+  const HBTextWithLinkButton({
+    super.key,
+    required this.onLinkTap,
+    required this.text,
+    required this.linkText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +20,13 @@ class SignUp extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         HBText(
-          'Don\'t have an account? ',
+          '$text ',
           style: HBTextStyles.body.copyWith(fontSize: HBFontSizes.small),
         ),
         InkWell(
-          onTap: onTap,
+          onTap: onLinkTap,
           child: HBText(
-            'Sign up',
+            linkText,
             style: HBTextStyles.link.copyWith(
               fontWeight: FontWeight.bold,
             ),

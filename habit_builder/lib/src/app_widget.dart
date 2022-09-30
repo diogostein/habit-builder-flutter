@@ -9,9 +9,11 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Habit Builder',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.light,
+        scaffoldBackgroundColor: HBColors.background,
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: HBMaterialColors.primarySwatch,
         ).copyWith(

@@ -4,6 +4,7 @@ abstract class HBIllustrations {
   static const manClock = 'lib/assets/illustrations/man_clock.png';
   static const manChart = 'lib/assets/illustrations/man_chart.png';
   static const manBonfire = 'lib/assets/illustrations/man_bonfire.png';
+  static const boxLocked = 'lib/assets/illustrations/box_locked.png';
 }
 
 abstract class HBSvgIcons {

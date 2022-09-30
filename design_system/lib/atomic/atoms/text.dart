@@ -19,7 +19,7 @@ class HBText extends StatelessWidget {
       data.toUpperCase(),
       key: key,
       style: HBTextStyles.headline1,
-      textAlign: textAlign,
+      textAlign: textAlign ?? TextAlign.center,
     );
   }
 
@@ -28,6 +28,24 @@ class HBText extends StatelessWidget {
       data.toUpperCase(),
       key: key,
       style: HBTextStyles.headline2,
+      textAlign: textAlign ?? TextAlign.center,
+    );
+  }
+
+  factory HBText.headline3(String data, {Key? key, TextAlign? textAlign}) {
+    return HBText(
+      data.toUpperCase(),
+      key: key,
+      style: HBTextStyles.headline3,
+      textAlign: textAlign ?? TextAlign.center,
+    );
+  }
+
+  factory HBText.small(String data, {Key? key, TextAlign? textAlign}) {
+    return HBText(
+      data,
+      key: key,
+      style: HBTextStyles.small,
       textAlign: textAlign,
     );
   }

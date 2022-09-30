@@ -26,9 +26,22 @@ abstract class HBTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static final headline3 = _parent.copyWith(
+    debugLabel: 'Headline3',
+    fontFamily: 'Klasik',
+    fontSize: HBFontSizes.headline3,
+    fontWeight: FontWeight.w400,
+  );
+
   static final body = _parent.copyWith(
     debugLabel: 'Body',
     fontWeight: FontWeight.w500,
+  );
+
+  static final small = _parent.copyWith(
+    debugLabel: 'Small',
+    fontWeight: FontWeight.w500,
+    fontSize: HBFontSizes.small,
   );
 
   static final link = _parent.copyWith(
@@ -48,6 +61,13 @@ abstract class HBTextStyles {
     debugLabel: 'Hint Text Form Field',
     color: HBMaterialColors.secondarySwatch.withOpacity(.4),
     fontWeight: FontWeight.w500,
+  );
+
+  static final errorTextFormField = _parent.copyWith(
+    debugLabel: 'Error Text Form Field',
+    color: HBColors.sunset,
+    fontWeight: FontWeight.w500,
+    fontSize: HBFontSizes.xSmall,
   );
 }
 

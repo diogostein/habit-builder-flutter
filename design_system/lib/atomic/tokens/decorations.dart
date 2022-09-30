@@ -7,6 +7,7 @@ abstract class HBDecorations {
     isDense: true,
     filled: true,
     hintStyle: HBTextStyles.hintTextFormField,
+    errorStyle: HBTextStyles.errorTextFormField,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(HBRadius.inputForm),
       borderSide: BorderSide.none,
