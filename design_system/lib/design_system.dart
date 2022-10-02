@@ -1,10 +1,12 @@
 library design_system;
 
 export 'atomic/atoms/button.dart';
+export 'atomic/atoms/circle_icon_button.dart';
 export 'atomic/atoms/flat_card.dart';
 export 'atomic/atoms/image.dart';
 export 'atomic/atoms/tab.dart';
 export 'atomic/atoms/text.dart';
+export 'atomic/molecules/header_bar.dart';
 export 'atomic/molecules/social_button.dart';
 export 'atomic/molecules/text_form_field.dart';
 export 'atomic/molecules/text_with_link_button.dart';
