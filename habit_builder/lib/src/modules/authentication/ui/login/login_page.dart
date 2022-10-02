@@ -16,7 +16,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return HBScaffold(
       body: Stack(
         children: [
           const Positioned(
@@ -43,14 +43,20 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
-                children: const [
-                  WelcomeTitle(),
-                  SizedBox(height: HBSpacings.xLarge),
-                  GoogleButton(),
-                  SizedBox(height: HBSpacings.xSmall),
-                  FacebookButton(),
-                  SizedBox(height: HBSpacings.large),
-                  LoginForm(),
+                children: [
+                  HBHeaderBar(
+                    trailing: HBCircleIconButton(
+                      icon: Icons.question_mark,
+                      onPressed: () {},
+                    ),
+                  ),
+                  const WelcomeTitle(),
+                  const SizedBox(height: HBSpacings.xLarge),
+                  const GoogleButton(),
+                  const SizedBox(height: HBSpacings.xSmall),
+                  const FacebookButton(),
+                  const SizedBox(height: HBSpacings.large),
+                  const LoginForm(),
                 ],
               ),
             ),

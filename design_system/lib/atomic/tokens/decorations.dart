@@ -19,5 +19,19 @@ abstract class HBDecorations {
         color: HBMaterialColors.primarySwatch.shade100,
       ),
     ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(HBRadius.inputForm),
+      borderSide: const BorderSide(
+        width: 2,
+        color: HBColors.sunset,
+      ),
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(HBRadius.inputForm),
+      borderSide: BorderSide(
+        width: 2,
+        color: HBMaterialColors.primarySwatch.shade100,
+      ),
+    ),
   );
 }

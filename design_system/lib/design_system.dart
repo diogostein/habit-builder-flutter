@@ -10,6 +10,7 @@ export 'atomic/molecules/header_bar.dart';
 export 'atomic/molecules/social_button.dart';
 export 'atomic/molecules/text_form_field.dart';
 export 'atomic/molecules/text_with_link_button.dart';
+export 'atomic/templates/scaffold.dart';
 export 'atomic/tokens/animations.dart';
 export 'atomic/tokens/assets.dart';
 export 'atomic/tokens/colors.dart';

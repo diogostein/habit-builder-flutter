@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class HBCircleIconButton extends StatelessWidget {
@@ -23,13 +24,13 @@ class HBCircleIconButton extends StatelessWidget {
       onTap: onPressed,
       customBorder: const CircleBorder(),
       child: Container(
-        width: 60,
-        height: 60,
+        width: 44,
+        height: 44,
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(.1),
           shape: BoxShape.circle,
         ),
-        child: Icon(icon),
+        child: Icon(icon, color: HBMaterialColors.secondarySwatch),
       ),
     );
   }
