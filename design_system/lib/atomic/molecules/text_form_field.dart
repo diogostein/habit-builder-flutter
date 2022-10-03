@@ -17,6 +17,7 @@ class HBTextFormField extends StatefulWidget {
   final FocusNode? focusNode;
   final List<TextInputFormatter>? inputFormatters;
   final FormFieldValidator<String>? validator;
+  final EdgeInsetsGeometry? margin;
 
   const HBTextFormField({
     super.key,
@@ -34,6 +35,7 @@ class HBTextFormField extends StatefulWidget {
     this.focusNode,
     this.inputFormatters,
     this.validator,
+    this.margin,
   });
 
   const HBTextFormField.email({
@@ -52,6 +54,7 @@ class HBTextFormField extends StatefulWidget {
     this.focusNode,
     this.inputFormatters,
     this.validator,
+    this.margin,
   });
 
   const HBTextFormField.password({
@@ -70,6 +73,7 @@ class HBTextFormField extends StatefulWidget {
     this.focusNode,
     this.inputFormatters,
     this.validator,
+    this.margin,
   });
 
   @override
@@ -90,51 +94,55 @@ class _HBTextFormFieldState extends State<HBTextFormField> {
   Widget build(BuildContext context) {
     return Focus(
       onFocusChange: (hasFocus) => setState(() => _hasFocus = hasFocus),
-      child: TextFormField(
-        controller: widget.controller,
-        focusNode: widget.focusNode,
-        keyboardType: widget.keyboardType,
-        textInputAction: widget.textInputAction,
-        autofocus: widget.autofocus,
-        enableInteractiveSelection: widget.enableInteractiveSelection,
-        enableSuggestions: widget.enableSuggestions,
-        obscureText: _obscureText,
-        obscuringCharacter: '●',
-        style: HBTextStyles.textFormField,
-        onEditingComplete: widget.onEditingComplete,
-        inputFormatters: widget.inputFormatters,
-        validator: widget.validator,
-        decoration: HBDecorations.inputDecoration.copyWith(
-          fillColor: widget.backgroundColor,
-          hintText: widget.hintText,
-          prefixIcon: widget.prefixIcon != null
-              ? Padding(
-                  padding: const EdgeInsets.only(
-                    left: HBSpacings.regular,
-                    right: HBSpacings.large,
-                  ),
-                  child: Icon(
-                    widget.prefixIcon,
-                    color: _hasFocus
-                        ? HBMaterialColors.primarySwatch
-                        : HBMaterialColors.secondarySwatch.withOpacity(.4),
-                  ),
-                )
-              : null,
-          suffix: widget.obscureText
-              ? InkWell(
-                  onTap: () => setState(() => _obscureText = !_obscureText),
-                  child: Text(
-                    _obscureText ? 'Show' : 'Hide',
-                    style: const TextStyle(
-                      color: HBMaterialColors.secondarySwatch,
-                      fontWeight: FontWeight.w500,
-                      fontSize: HBFontSizes.small,
-                      decoration: TextDecoration.underline,
+      child: Padding(
+        padding:
+            widget.margin ?? const EdgeInsets.only(bottom: HBSpacings.xSmall),
+        child: TextFormField(
+          controller: widget.controller,
+          focusNode: widget.focusNode,
+          keyboardType: widget.keyboardType,
+          textInputAction: widget.textInputAction,
+          autofocus: widget.autofocus,
+          enableInteractiveSelection: widget.enableInteractiveSelection,
+          enableSuggestions: widget.enableSuggestions,
+          obscureText: _obscureText,
+          obscuringCharacter: '●',
+          style: HBTextStyles.textFormField,
+          onEditingComplete: widget.onEditingComplete,
+          inputFormatters: widget.inputFormatters,
+          validator: widget.validator,
+          decoration: HBDecorations.inputDecoration.copyWith(
+            fillColor: widget.backgroundColor ?? Colors.white,
+            hintText: widget.hintText,
+            prefixIcon: widget.prefixIcon != null
+                ? Padding(
+                    padding: const EdgeInsets.only(
+                      left: HBSpacings.regular,
+                      right: HBSpacings.large,
                     ),
-                  ),
-                )
-              : null,
+                    child: Icon(
+                      widget.prefixIcon,
+                      color: _hasFocus
+                          ? HBMaterialColors.primarySwatch
+                          : HBMaterialColors.secondarySwatch.withOpacity(.4),
+                    ),
+                  )
+                : null,
+            suffix: widget.obscureText
+                ? InkWell(
+                    onTap: () => setState(() => _obscureText = !_obscureText),
+                    child: Text(
+                      _obscureText ? 'Show' : 'Hide',
+                      style: const TextStyle(
+                        color: HBMaterialColors.secondarySwatch,
+                        fontWeight: FontWeight.w500,
+                        fontSize: HBFontSizes.small,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  )
+                : null,
+          ),
         ),
       ),
     );

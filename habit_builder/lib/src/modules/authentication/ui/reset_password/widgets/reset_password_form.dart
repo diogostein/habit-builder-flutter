@@ -43,11 +43,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
               ValidatorProvider.email(),
             ]),
           ),
-          const SizedBox(height: HBSpacings.small),
-          HBButton(
-            'Send Reset Link',
-            onPressed: _sendResetLink,
-          ),
+          HBButton('Send Reset Link', onPressed: _sendResetLink),
         ],
       ),
     );

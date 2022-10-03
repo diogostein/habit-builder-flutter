@@ -52,7 +52,7 @@ class HBSocialButton extends StatelessWidget {
       onPressed: onPressed,
       style: HBButtonStyles.socialButton,
       icon: Padding(
-        padding: const EdgeInsets.only(right: HBSpacings.regular),
+        padding: const EdgeInsets.only(right: HBSpacings.xSmall),
         child: icon,
       ),
       label: Text(

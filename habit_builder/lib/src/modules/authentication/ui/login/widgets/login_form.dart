@@ -31,10 +31,6 @@ class _LoginFormState extends State<LoginForm> {
     }
   }
 
-  _onForgotPasswordTap() {
-    Modular.to.pushNamed('reset-password');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -67,7 +63,6 @@ class _LoginFormState extends State<LoginForm> {
               ]),
               onEditingComplete: () => _passwordFocus.requestFocus(),
             ),
-            const SizedBox(height: HBSpacings.xSmall),
             HBTextFormField.password(
               backgroundColor: HBColors.background,
               focusNode: _passwordFocus,
@@ -77,13 +72,16 @@ class _LoginFormState extends State<LoginForm> {
                 ValidatorProvider.minLength(4),
               ]),
             ),
-            const SizedBox(height: HBSpacings.regular),
+            const SizedBox(height: HBSpacings.xSmall),
             HBButton('Login', onPressed: _onLoginPressed),
-            HBLinkButton('Forgot Password?', onPressed: _onForgotPasswordTap),
+            HBLinkButton(
+              'Forgot Password?',
+              onPressed: () => Modular.to.pushNamed('reset-password'),
+            ),
             HBTextWithLinkButton(
               text: 'Don\'t have an account?',
               linkText: 'Sign up',
-              onLinkTap: () {},
+              onLinkTap: () => Modular.to.pushNamed('sign-up'),
             ),
           ],
         ),
