@@ -6,6 +6,7 @@ export 'atomic/atoms/flat_card.dart';
 export 'atomic/atoms/image.dart';
 export 'atomic/atoms/tab.dart';
 export 'atomic/atoms/text.dart';
+export 'atomic/molecules/check_box.dart';
 export 'atomic/molecules/header_bar.dart';
 export 'atomic/molecules/social_button.dart';
 export 'atomic/molecules/text_form_field.dart';
