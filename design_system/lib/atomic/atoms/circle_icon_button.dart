@@ -18,6 +18,13 @@ class HBCircleIconButton extends StatelessWidget {
     );
   }
 
+  factory HBCircleIconButton.drawer({required VoidCallback onPressed}) {
+    return HBCircleIconButton(
+      onPressed: onPressed,
+      icon: Icons.menu,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(

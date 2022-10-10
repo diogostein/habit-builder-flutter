@@ -34,7 +34,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
             'Enter your registered email below to receive password reset instruction',
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: HBSpacings.xLarge),
+          const HBGapHeight.xLarge(),
           HBTextFormField.email(
             backgroundColor: HBColors.background,
             prefixIcon: null,

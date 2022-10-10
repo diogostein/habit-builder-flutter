@@ -7,6 +7,7 @@ class HBHeaderBar extends StatelessWidget {
   final Widget? leading;
   final String? titleText;
   final Widget? trailing;
+  final bool automaticallyImplyLeading;
 
   const HBHeaderBar({
     super.key,
@@ -14,7 +15,18 @@ class HBHeaderBar extends StatelessWidget {
     this.titleText,
     this.trailing,
     this.padding,
+    this.automaticallyImplyLeading = false,
   });
+
+  Widget? _leadingFallback(BuildContext context) {
+    if (automaticallyImplyLeading) {
+      return HBCircleIconButton.back(
+        onPressed: () => Navigator.pop(context),
+      );
+    }
+
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +38,7 @@ class HBHeaderBar extends StatelessWidget {
           SizedBox(
             width: 44,
             height: 44,
-            child: leading,
+            child: leading ?? _leadingFallback(context),
           ),
           HBText(
             titleText ?? '',

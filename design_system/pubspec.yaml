@@ -27,6 +27,7 @@ flutter:
   assets:
     - lib/assets/illustrations/
     - lib/assets/icons/
+    - lib/assets/icons/menu/
 
   fonts:
     - family: Klasik

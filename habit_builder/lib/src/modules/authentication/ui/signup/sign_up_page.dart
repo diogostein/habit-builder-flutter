@@ -20,23 +20,25 @@ class _SignUpPageState extends State<SignUpPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const SizedBox(height: HBSpacings.regular),
+          const HBGapHeight(),
           const HBImage(
             HBIllustrations.createYourAccount,
             height: 180,
           ),
-          const SizedBox(height: HBSpacings.regular),
+          const HBGapHeight(),
           HBText.headline3('Create your account'),
           const SignUpForm(),
           const SignUpDivider(),
           const SignUpSocial(),
-          const Expanded(child: SizedBox(height: HBSpacings.regular)),
+          const Expanded(
+            child: HBGapHeight(),
+          ),
           HBTextWithLinkButton(
             onLinkTap: () => Modular.to.pop(),
             text: 'Already have an account?',
             linkText: 'Sign in',
           ),
-          const SizedBox(height: HBSpacings.regular),
+          const HBGapHeight(),
         ],
       ),
     );

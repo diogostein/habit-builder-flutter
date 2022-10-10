@@ -63,19 +63,19 @@ class _SignUpFormState extends State<SignUpForm> {
                 ValidatorProvider.minLength(4),
               ]),
             ),
-            const SizedBox(height: HBSpacings.xSmall),
+            const HBGapHeight.xSmall(),
             HBCheckBox(
               onChange: (isChecked) {},
               isChecked: true,
               labelText: 'Keep me signed in',
             ),
-            const SizedBox(height: HBSpacings.regular),
+            const HBGapHeight(),
             HBCheckBox(
               onChange: (isChecked) {},
               isChecked: true,
               labelText: 'Email me about special pricing and more',
             ),
-            const SizedBox(height: HBSpacings.regular),
+            const HBGapHeight(),
             HBButton(
               'Create Account',
               onPressed: _onCreateAccount,

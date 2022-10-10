@@ -25,7 +25,7 @@ class _LoginFormState extends State<LoginForm> {
 
   _onLoginPressed() {
     if (_formKey.currentState?.validate() == true) {
-      print('valid!!!');
+      Modular.to.navigate('/home');
     } else {
       _emailFocus.requestFocus();
     }
@@ -53,6 +53,7 @@ class _LoginFormState extends State<LoginForm> {
             ),
             const Divider(height: HBSpacings.xLarge),
             HBTextFormField.email(
+              initialValue: 'justine@hb.com',
               backgroundColor: HBColors.background,
               focusNode: _emailFocus,
               autofocus: true,
@@ -64,6 +65,7 @@ class _LoginFormState extends State<LoginForm> {
               onEditingComplete: () => _passwordFocus.requestFocus(),
             ),
             HBTextFormField.password(
+              initialValue: '1234',
               backgroundColor: HBColors.background,
               focusNode: _passwordFocus,
               textInputAction: TextInputAction.done,
@@ -72,7 +74,7 @@ class _LoginFormState extends State<LoginForm> {
                 ValidatorProvider.minLength(4),
               ]),
             ),
-            const SizedBox(height: HBSpacings.xSmall),
+            const HBGapHeight.xSmall(),
             HBButton('Login', onPressed: _onLoginPressed),
             HBLinkButton(
               'Forgot Password?',

@@ -14,7 +14,7 @@ class SignUpSocial extends StatelessWidget {
           Expanded(
             child: HBSocialButton.google('Google', onPressed: () {}),
           ),
-          const SizedBox(width: HBSpacings.regular),
+          const HBGapWidth(),
           Expanded(
             child: HBSocialButton.facebook('Facebook', onPressed: () {}),
           ),

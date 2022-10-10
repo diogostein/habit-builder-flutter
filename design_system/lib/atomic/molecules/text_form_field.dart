@@ -19,6 +19,7 @@ class HBTextFormField extends StatefulWidget {
   final FormFieldValidator<String>? validator;
   final EdgeInsetsGeometry? margin;
   final TextCapitalization? textCapitalization;
+  final String? initialValue;
 
   const HBTextFormField({
     super.key,
@@ -37,7 +38,7 @@ class HBTextFormField extends StatefulWidget {
     this.inputFormatters,
     this.validator,
     this.margin,
-    this.textCapitalization,
+    this.textCapitalization, this.initialValue,
   });
 
   const HBTextFormField.email({
@@ -57,7 +58,7 @@ class HBTextFormField extends StatefulWidget {
     this.inputFormatters,
     this.validator,
     this.margin,
-    this.textCapitalization,
+    this.textCapitalization, this.initialValue,
   });
 
   const HBTextFormField.password({
@@ -77,7 +78,7 @@ class HBTextFormField extends StatefulWidget {
     this.inputFormatters,
     this.validator,
     this.margin,
-    this.textCapitalization,
+    this.textCapitalization, this.initialValue,
   });
 
   @override
@@ -104,6 +105,7 @@ class _HBTextFormFieldState extends State<HBTextFormField> {
         child: TextFormField(
           controller: widget.controller,
           focusNode: widget.focusNode,
+          initialValue: widget.initialValue,
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
           textCapitalization:

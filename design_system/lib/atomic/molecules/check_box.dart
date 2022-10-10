@@ -15,8 +15,8 @@ class HBCheckBox extends StatefulWidget {
 
   const HBCheckBox({
     super.key,
-    this.isChecked,
     required this.onChange,
+    this.isChecked,
     this.size,
     this.iconSize,
     this.selectedColor,

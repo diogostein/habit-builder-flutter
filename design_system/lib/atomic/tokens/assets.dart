@@ -11,4 +11,13 @@ abstract class HBIllustrations {
 
 abstract class HBSvgIcons {
   static const google = 'lib/assets/icons/google.svg';
+  static const check = 'lib/assets/icons/ic-check.svg';
+  static const add = 'lib/assets/icons/ic-add.svg';
+}
+
+abstract class HBPngIcons {
+  static const menuHome = 'lib/assets/icons/menu/ic-menu-home.png';
+  static const menuCourses = 'lib/assets/icons/menu/ic-menu-courses.png';
+  static const menuCommunity = 'lib/assets/icons/menu/ic-menu-community.png';
+  static const menuSettings = 'lib/assets/icons/menu/ic-menu-settings.png';
 }

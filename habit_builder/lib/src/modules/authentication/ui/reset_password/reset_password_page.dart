@@ -14,15 +14,13 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return HBScaffold(
-      headerBar: HBHeaderBar(
-        leading: HBCircleIconButton.back(
-          onPressed: () => Modular.to.pop(),
-        ),
+      headerBar: const HBHeaderBar(
+        automaticallyImplyLeading: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const SizedBox(height: HBSpacings.regular),
+          const HBGapHeight(),
           HBText.headline3('Forgot your password?'),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: HBSpacings.xLarge),
@@ -35,13 +33,15 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             margin: EdgeInsets.symmetric(horizontal: HBSpacings.regular),
             child: ResetPasswordForm(),
           ),
-          const Expanded(child: SizedBox(height: HBSpacings.regular)),
+          const Expanded(
+            child: HBGapHeight(),
+          ),
           HBTextWithLinkButton(
             onLinkTap: () => Modular.to.pop(),
             text: 'Remember password?',
             linkText: 'Login',
           ),
-          const SizedBox(height: HBSpacings.regular),
+          const HBGapHeight(),
         ],
       ),
     );
