@@ -41,6 +41,15 @@ class HBText extends StatelessWidget {
     );
   }
 
+  factory HBText.headline4(String data, {Key? key, TextAlign? textAlign}) {
+    return HBText(
+      data.toUpperCase(),
+      key: key,
+      style: HBTextStyles.headline4,
+      textAlign: textAlign ?? TextAlign.center,
+    );
+  }
+
   factory HBText.small(String data, {Key? key, TextAlign? textAlign}) {
     return HBText(
       data,

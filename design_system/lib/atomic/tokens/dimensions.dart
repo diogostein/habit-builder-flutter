@@ -15,6 +15,7 @@ abstract class HBRadius {
   static const socialButton = 12.0;
   static const inputForm = 12.0;
   static const box = 20.0;
+  static const flatCard = 12.0;
 }
 
 abstract class HBFontSizes {
@@ -30,4 +31,5 @@ abstract class HBFontSizes {
   static const headline1 = 40.0;
   static const headline2 = 32.0;
   static const headline3 = 24.0;
+  static const headline4 = 18.0;
 }

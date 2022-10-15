@@ -18,11 +18,12 @@ class HBFlatCard extends StatelessWidget {
     return Card(
       elevation: 0,
       margin: margin,
+      clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(HBRadius.box),
+        borderRadius: BorderRadius.circular(HBRadius.flatCard),
       ),
       child: Padding(
-        padding: padding ?? const EdgeInsets.all(HBSpacings.large),
+        padding: padding ?? const EdgeInsets.all(HBSpacings.regular),
         child: child,
       ),
     );

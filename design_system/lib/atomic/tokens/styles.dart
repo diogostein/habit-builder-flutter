@@ -33,6 +33,13 @@ abstract class HBTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static final headline4 = _parent.copyWith(
+    debugLabel: 'Headline4',
+    fontFamily: 'Klasik',
+    fontSize: HBFontSizes.headline4,
+    fontWeight: FontWeight.w400,
+  );
+
   static final body = _parent.copyWith(
     debugLabel: 'Body',
     fontWeight: FontWeight.w500,

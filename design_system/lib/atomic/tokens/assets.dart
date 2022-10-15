@@ -7,6 +7,7 @@ abstract class HBIllustrations {
   static const boxLocked = 'lib/assets/illustrations/box_locked.png';
   static const createYourAccount =
       'lib/assets/illustrations/create_your_account.png';
+  static const bgMountains = 'lib/assets/illustrations/bg_mountains.png';
 }
 
 abstract class HBSvgIcons {
