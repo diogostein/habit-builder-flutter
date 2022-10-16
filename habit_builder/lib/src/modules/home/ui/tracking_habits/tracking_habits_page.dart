@@ -41,8 +41,18 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage> {
           ),
         ),
         child: Column(
-          children: const [
-            MotivationalBanner(),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const MotivationalBanner(),
+            HBFlatCard(
+              child: Row(
+                children: [
+                  HBHabitSquare.half(color: Colors.blue),
+                  HBHabitSquare(color: Colors.blue),
+                  HBHabitSquare.half(color: Colors.blue),
+                ],
+              ),
+            ),
           ],
         ),
       ),

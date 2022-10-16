@@ -16,6 +16,7 @@ abstract class HBRadius {
   static const inputForm = 12.0;
   static const box = 20.0;
   static const flatCard = 12.0;
+  static const habitSquare = 12.0;
 }
 
 abstract class HBFontSizes {

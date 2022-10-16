@@ -6,6 +6,7 @@ export 'atomic/atoms/circle_icon_button.dart';
 export 'atomic/atoms/flat_card.dart';
 export 'atomic/atoms/floating_action_button.dart';
 export 'atomic/atoms/gap.dart';
+export 'atomic/atoms/habit_square.dart';
 export 'atomic/atoms/image.dart';
 export 'atomic/atoms/image_provider.dart';
 export 'atomic/atoms/menu_icon_button.dart';
