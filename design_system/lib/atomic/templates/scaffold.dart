@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../design_system.dart';
+
 class HBScaffold extends StatelessWidget {
   final Widget? headerBar;
   final Widget body;
@@ -8,6 +10,7 @@ class HBScaffold extends StatelessWidget {
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
   final bool extendBody;
+  final bool hasBackground;
 
   const HBScaffold({
     super.key,
@@ -18,12 +21,32 @@ class HBScaffold extends StatelessWidget {
     this.floatingActionButton,
     this.floatingActionButtonLocation,
     this.extendBody = false,
+    this.hasBackground = false,
   });
+
+  Widget get _buildBody {
+    if (hasBackground) {
+      return Container(
+        padding: EdgeInsets.only(bottom: bottomNavigationBar != null ? 120 : 0),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: HBAssetImage(HBIllustrations.bgMountains),
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.bottomCenter,
+          ),
+        ),
+        child: body,
+      );
+    }
+
+    return body;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: extendBody,
+      extendBodyBehindAppBar: extendBodyBehindAppBar,
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation ??
@@ -38,7 +61,7 @@ class HBScaffold extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   headerBar ?? const SizedBox(),
-                  Expanded(child: body),
+                  Expanded(child: _buildBody),
                 ],
               ),
             ),

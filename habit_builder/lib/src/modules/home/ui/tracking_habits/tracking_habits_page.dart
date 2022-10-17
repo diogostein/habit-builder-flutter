@@ -1,6 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import 'widgets/habit_day_list.dart';
+import 'widgets/habit_frequency_list.dart';
 import 'widgets/motivational_banner.dart';
 
 class TrackingHabitsPage extends StatefulWidget {
@@ -15,6 +17,7 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage> {
   Widget build(BuildContext context) {
     return HBScaffold(
       extendBody: true,
+      hasBackground: true,
       headerBar: HBHeaderBar(
         leading: HBCircleIconButton.drawer(onPressed: () {}),
         titleText: 'Homepage',
@@ -31,30 +34,44 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage> {
         onMenuIconPressed: (menuIconType) {},
         activeMenuIcon: HBMenuIconType.home,
       ),
-      body: Container(
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: HBAssetImage(HBIllustrations.bgMountains),
-            fit: BoxFit.cover,
-            alignment: Alignment.bottomCenter,
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const MotivationalBanner(),
-            HBFlatCard(
-              child: Row(
-                children: [
-                  HBHabitSquare.half(color: Colors.blue),
-                  HBHabitSquare(color: Colors.blue),
-                  HBHabitSquare.half(color: Colors.blue),
-                ],
-              ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const MotivationalBanner(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                HabitDayList(),
+                HabitFrequencyList(
+                  color: HBColors.morning,
+                  title: 'Read A Book',
+                  values: [1, 1, .5, 1, 1, .5, 1],
+                ),
+                HBGapHeight.xSmall(),
+                HabitFrequencyList(
+                  color: HBColors.sunset,
+                  title: 'Exercise',
+                  values: [1, 1, .5, 1],
+                ),
+                HBGapHeight.xSmall(),
+                HabitFrequencyList(
+                  color: HBColors.twilight,
+                  title: 'Wake Up Early',
+                  values: [1, .5, 1],
+                ),
+                HBGapHeight.xSmall(),
+                HabitFrequencyList(
+                  color: HBColors.eclipse,
+                  title: 'Walk Dog',
+                  values: [1, .5, 1, .5, .5],
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

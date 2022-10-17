@@ -12,6 +12,7 @@ export 'atomic/atoms/image_provider.dart';
 export 'atomic/atoms/menu_icon_button.dart';
 export 'atomic/atoms/tab.dart';
 export 'atomic/atoms/text.dart';
+export 'atomic/atoms/week_day_card.dart';
 export 'atomic/molecules/bottom_app_bar.dart';
 export 'atomic/molecules/check_box.dart';
 export 'atomic/molecules/header_bar.dart';
