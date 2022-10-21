@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
           const Positioned(
             top: -230,
             child: HBImage(
-              HBIllustrations.manMountains,
+              HBIllustrations.bgSplash,
             ),
           ),
           Container(

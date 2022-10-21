@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:habit_builder/src/core/mixin/menu_actions.dart';
 
 import 'widgets/habit_day_list.dart';
 import 'widgets/habit_frequency_list.dart';
@@ -12,7 +13,8 @@ class TrackingHabitsPage extends StatefulWidget {
   State<TrackingHabitsPage> createState() => _TrackingHabitsPageState();
 }
 
-class _TrackingHabitsPageState extends State<TrackingHabitsPage> {
+class _TrackingHabitsPageState extends State<TrackingHabitsPage>
+    with MenuActions {
   @override
   Widget build(BuildContext context) {
     return HBScaffold(
@@ -31,7 +33,7 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage> {
         child: const HBImage(HBSvgIcons.add),
       ),
       bottomNavigationBar: HBBottomAppBar(
-        onMenuIconPressed: (menuIconType) {},
+        onMenuIconPressed: onMenuIconPressed,
         activeMenuIcon: HBMenuIconType.home,
       ),
       body: Column(

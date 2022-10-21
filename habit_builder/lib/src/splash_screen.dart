@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         alignment: Alignment.topCenter,
         children: [
           const HBImage(
-            HBIllustrations.manMountains,
+            HBIllustrations.bgSplash,
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,

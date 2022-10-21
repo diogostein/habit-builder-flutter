@@ -26,6 +26,7 @@ flutter:
 
   assets:
     - lib/assets/illustrations/
+    - lib/assets/illustrations/courses/
     - lib/assets/icons/
     - lib/assets/icons/menu/
 

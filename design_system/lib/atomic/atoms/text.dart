@@ -1,3 +1,4 @@
+import 'package:design_system/atomic/tokens/dimensions.dart';
 import 'package:flutter/material.dart';
 
 import '../tokens/styles.dart';
@@ -50,11 +51,47 @@ class HBText extends StatelessWidget {
     );
   }
 
-  factory HBText.small(String data, {Key? key, TextAlign? textAlign}) {
+  factory HBText.title(
+    String data, {
+    Key? key,
+    TextAlign? textAlign,
+    Color? color,
+  }) {
     return HBText(
       data,
       key: key,
-      style: HBTextStyles.small,
+      style: HBTextStyles.title.copyWith(color: color),
+      textAlign: textAlign,
+    );
+  }
+
+  factory HBText.small(
+    String data, {
+    Key? key,
+    TextAlign? textAlign,
+    Color? color,
+  }) {
+    return HBText(
+      data,
+      key: key,
+      style: HBTextStyles.small.copyWith(color: color),
+      textAlign: textAlign,
+    );
+  }
+
+  factory HBText.caption(
+    String data, {
+    Key? key,
+    TextAlign? textAlign,
+    Color? color,
+  }) {
+    return HBText(
+      data,
+      key: key,
+      style: HBTextStyles.small.copyWith(
+        fontSize: HBFontSizes.xSmall,
+        color: color,
+      ),
       textAlign: textAlign,
     );
   }

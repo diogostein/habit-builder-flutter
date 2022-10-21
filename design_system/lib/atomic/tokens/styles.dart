@@ -15,7 +15,6 @@ abstract class HBTextStyles {
     debugLabel: 'Headline1',
     fontFamily: 'Klasik',
     fontSize: HBFontSizes.headline1,
-    height: 1.1,
     fontWeight: FontWeight.w400,
   );
 
@@ -49,6 +48,12 @@ abstract class HBTextStyles {
     debugLabel: 'Small',
     fontWeight: FontWeight.w500,
     fontSize: HBFontSizes.small,
+  );
+
+  static final title = _parent.copyWith(
+    debugLabel: 'Title',
+    fontWeight: FontWeight.w700,
+    fontSize: HBFontSizes.large,
   );
 
   static final link = _parent.copyWith(

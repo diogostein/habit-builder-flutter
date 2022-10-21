@@ -1,9 +1,10 @@
 abstract class HBIllustrations {
-  static const manMountains = 'lib/assets/illustrations/man_mountains.png';
+  static const bgSplash = 'lib/assets/illustrations/bg_splash.png';
   static const manConfident = 'lib/assets/illustrations/man_confident.png';
   static const manClock = 'lib/assets/illustrations/man_clock.png';
   static const manChart = 'lib/assets/illustrations/man_chart.png';
   static const manBonfire = 'lib/assets/illustrations/man_bonfire.png';
+  static const coursesCover = 'lib/assets/illustrations/courses/cover.png';
   static const boxLocked = 'lib/assets/illustrations/box_locked.png';
   static const createYourAccount =
       'lib/assets/illustrations/create_your_account.png';

@@ -8,6 +8,7 @@ class HBImage extends StatelessWidget {
   final double? height;
   final Color? color;
   final BlendMode? colorBlendMode;
+  final String? package;
 
   const HBImage(
     this.path, {
@@ -17,6 +18,7 @@ class HBImage extends StatelessWidget {
     this.height,
     this.color,
     this.colorBlendMode,
+    this.package,
   });
 
   bool get _isSvg => path.split('.').last == 'svg';
@@ -26,7 +28,7 @@ class HBImage extends StatelessWidget {
     return _isSvg
         ? SvgPicture.asset(
             path,
-            package: 'design_system',
+            package: package ?? 'design_system',
             fit: fit ?? BoxFit.contain,
             width: width,
             height: height,
@@ -35,7 +37,7 @@ class HBImage extends StatelessWidget {
           )
         : Image.asset(
             path,
-            package: 'design_system',
+            package: package ?? 'design_system',
             fit: fit,
             width: width,
             height: height,
