@@ -17,8 +17,7 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage>
     with MenuActions {
   @override
   Widget build(BuildContext context) {
-    return HBScaffold(
-      extendBody: true,
+    return HBSliverScaffold(
       hasBackground: true,
       headerBar: HBHeaderBar(
         leading: HBCircleIconButton.drawer(onPressed: () {}),
@@ -36,11 +35,12 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage>
         onMenuIconPressed: onMenuIconPressed,
         activeMenuIcon: HBMenuIconType.home,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const MotivationalBanner(),
-          SingleChildScrollView(
+      slivers: [
+        const SliverToBoxAdapter(
+          child: MotivationalBanner(),
+        ),
+        SliverToBoxAdapter(
+          child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
             child: Column(
@@ -73,8 +73,8 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage>
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

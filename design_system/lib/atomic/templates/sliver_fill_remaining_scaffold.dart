@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../design_system.dart';
 
-class HBScaffold extends StatelessWidget {
+class HBSliverFillRemainingScaffold extends StatelessWidget {
   final Widget? headerBar;
   final Widget body;
   final bool extendBodyBehindAppBar;
@@ -12,7 +12,7 @@ class HBScaffold extends StatelessWidget {
   final bool extendBody;
   final bool hasBackground;
 
-  const HBScaffold({
+  const HBSliverFillRemainingScaffold({
     super.key,
     this.headerBar,
     required this.body,
@@ -51,12 +51,12 @@ class HBScaffold extends StatelessWidget {
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation ??
           FloatingActionButtonLocation.centerDocked,
-      body: SafeArea(
-        bottom: !extendBody,
-        child: CustomScrollView(
-          slivers: [
-            SliverFillRemaining(
-              hasScrollBody: false,
+      body: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: SafeArea(
+              bottom: !extendBody,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -65,8 +65,8 @@ class HBScaffold extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
