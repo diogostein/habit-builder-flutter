@@ -7,12 +7,14 @@ class HBText extends StatelessWidget {
   final String data;
   final TextStyle? style;
   final TextAlign? textAlign;
+  final TextOverflow? overflow;
 
   const HBText(
     this.data, {
     super.key,
     this.style,
     this.textAlign,
+    this.overflow,
   });
 
   factory HBText.headline1(String data, {Key? key, TextAlign? textAlign}) {
@@ -103,6 +105,7 @@ class HBText extends StatelessWidget {
       key: key,
       style: style ?? HBTextStyles.body,
       textAlign: textAlign,
+      overflow: overflow,
     );
   }
 }

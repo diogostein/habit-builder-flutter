@@ -2,9 +2,10 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:habit_builder/src/core/mixin/menu_actions.dart';
-import 'package:habit_builder/src/modules/courses/data/course.dart';
-import 'package:habit_builder/src/modules/courses/data/course_repository.dart';
-import 'package:habit_builder/src/modules/courses/ui/widgets/intro_banner.dart';
+
+import '../data/course_repository.dart';
+import '../data/models/course.dart';
+import 'widgets/intro_banner.dart';
 
 class CoursesPage extends StatefulWidget {
   const CoursesPage({Key? key}) : super(key: key);
@@ -51,6 +52,7 @@ class _CoursesPageState extends State<CoursesPage> with MenuActions {
             (context, index) {
               final course = _courses[index];
               return HBCourseCard(
+                onTap: () => Modular.to.pushNamed('${course.id}'),
                 assetPath: course.image ?? '',
                 title: course.name,
                 caption1: course.duration,

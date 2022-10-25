@@ -7,6 +7,7 @@ class HBCourseCard extends StatelessWidget {
   final String title;
   final String caption1;
   final String caption2;
+  final Function()? onTap;
 
   const HBCourseCard({
     super.key,
@@ -14,11 +15,13 @@ class HBCourseCard extends StatelessWidget {
     required this.title,
     required this.caption1,
     required this.caption2,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return HBFlatCard(
+      onTap: onTap,
       margin: const EdgeInsets.symmetric(
         vertical: HBSpacings.xxSmall,
         horizontal: HBSpacings.regular,

@@ -40,11 +40,19 @@ class HBHeaderBar extends StatelessWidget {
             height: 44,
             child: leading ?? _leadingFallback(context),
           ),
-          HBText(
-            titleText ?? '',
-            style: HBTextStyles.body.copyWith(
-              fontSize: HBFontSizes.large,
-              fontWeight: FontWeight.bold,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: HBSpacings.regular,
+              ),
+              child: HBText(
+                titleText ?? '',
+                overflow: TextOverflow.ellipsis,
+                style: HBTextStyles.body.copyWith(
+                  fontSize: HBFontSizes.large,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
           SizedBox(

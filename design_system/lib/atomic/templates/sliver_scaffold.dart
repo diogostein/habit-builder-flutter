@@ -22,24 +22,6 @@ class HBSliverScaffold extends StatelessWidget {
     required this.slivers,
   });
 
-  // Widget get _buildBody {
-  //   if (hasBackground) {
-  //     return Container(
-  //       padding: EdgeInsets.only(bottom: bottomNavigationBar != null ? 120 : 0),
-  //       decoration: const BoxDecoration(
-  //         image: DecorationImage(
-  //           image: HBAssetImage(HBIllustrations.bgMountains),
-  //           fit: BoxFit.fitWidth,
-  //           alignment: Alignment.bottomCenter,
-  //         ),
-  //       ),
-  //       child: body,
-  //     );
-  //   }
-  //
-  //   return body;
-  // }
-
   bool get _extendBody => bottomNavigationBar != null;
 
   @override

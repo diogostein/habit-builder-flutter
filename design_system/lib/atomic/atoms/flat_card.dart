@@ -7,6 +7,7 @@ class HBFlatCard extends StatelessWidget {
   final double? width;
   final double? height;
   final Widget child;
+  final Function()? onTap;
 
   const HBFlatCard({
     super.key,
@@ -15,6 +16,7 @@ class HBFlatCard extends StatelessWidget {
     required this.child,
     this.width,
     this.height,
+    this.onTap,
   });
 
   @override
@@ -29,9 +31,12 @@ class HBFlatCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(HBRadius.flatCard),
         ),
-        child: Padding(
-          padding: padding ?? const EdgeInsets.all(HBSpacings.regular),
-          child: child,
+        child: InkWell(
+          onTap: onTap,
+          child: Padding(
+            padding: padding ?? const EdgeInsets.all(HBSpacings.regular),
+            child: child,
+          ),
         ),
       ),
     );
