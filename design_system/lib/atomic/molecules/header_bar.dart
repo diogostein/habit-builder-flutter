@@ -47,6 +47,7 @@ class HBHeaderBar extends StatelessWidget {
               ),
               child: HBText(
                 titleText ?? '',
+                textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: HBTextStyles.body.copyWith(
                   fontSize: HBFontSizes.large,

@@ -20,6 +20,7 @@ export 'atomic/molecules/header_bar.dart';
 export 'atomic/molecules/social_button.dart';
 export 'atomic/molecules/text_form_field.dart';
 export 'atomic/molecules/text_with_link_button.dart';
+export 'atomic/organisms/community_post_card.dart';
 export 'atomic/organisms/course_card.dart';
 export 'atomic/templates/sliver_fill_remaining_scaffold.dart';
 export 'atomic/templates/sliver_scaffold.dart';
