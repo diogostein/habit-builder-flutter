@@ -6,6 +6,7 @@ import 'modules/community/community_module.dart';
 import 'modules/courses/course_module.dart';
 import 'modules/home/home_module.dart';
 import 'modules/onboarding/onboarding_module.dart';
+import 'modules/settings/settings_module.dart';
 
 class AppModule extends Module {
   @override
@@ -19,5 +20,6 @@ class AppModule extends Module {
         ModuleRoute('/home', module: HomeModule()),
         ModuleRoute('/courses', module: CourseModule()),
         ModuleRoute('/community', module: CommunityModule()),
+        ModuleRoute('/settings', module: SettingsModule()),
       ];
 }

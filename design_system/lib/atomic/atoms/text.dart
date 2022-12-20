@@ -1,3 +1,4 @@
+import 'package:design_system/atomic/tokens/colors.dart';
 import 'package:design_system/atomic/tokens/dimensions.dart';
 import 'package:flutter/material.dart';
 
@@ -93,6 +94,23 @@ class HBText extends StatelessWidget {
       style: HBTextStyles.small.copyWith(
         fontSize: HBFontSizes.xSmall,
         color: color,
+      ),
+      textAlign: textAlign,
+    );
+  }
+
+  factory HBText.muted(
+    String data, {
+    Key? key,
+    TextAlign? textAlign,
+    Color? color,
+  }) {
+    return HBText(
+      data,
+      key: key,
+      style: HBTextStyles.small.copyWith(
+        fontSize: HBFontSizes.xSmall,
+        color: color ?? HBMaterialColors.secondarySwatch.withOpacity(.5),
       ),
       textAlign: textAlign,
     );

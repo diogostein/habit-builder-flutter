@@ -17,6 +17,7 @@ export 'atomic/atoms/week_day_card.dart';
 export 'atomic/molecules/bottom_app_bar.dart';
 export 'atomic/molecules/check_box.dart';
 export 'atomic/molecules/header_bar.dart';
+export 'atomic/molecules/menu_button.dart';
 export 'atomic/molecules/social_button.dart';
 export 'atomic/molecules/text_form_field.dart';
 export 'atomic/molecules/text_with_link_button.dart';
