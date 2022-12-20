@@ -12,6 +12,7 @@ export 'atomic/atoms/icon.dart';
 export 'atomic/atoms/image.dart';
 export 'atomic/atoms/image_provider.dart';
 export 'atomic/atoms/menu_icon_button.dart';
+export 'atomic/atoms/vertical_divider.dart';
 export 'atomic/atoms/tab.dart';
 export 'atomic/atoms/text.dart';
 export 'atomic/atoms/week_day_card.dart';

@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:habit_builder/src/core/mixin/add_new_habit_event.dart';
 import 'package:habit_builder/src/core/mixin/menu_actions.dart';
 
 import 'widgets/habit_day_list.dart';
@@ -15,7 +16,7 @@ class TrackingHabitsPage extends StatefulWidget {
 }
 
 class _TrackingHabitsPageState extends State<TrackingHabitsPage>
-    with MenuActions {
+    with MenuActions, AddNewHabitEvent {
   @override
   Widget build(BuildContext context) {
     return HBSliverScaffold(
@@ -32,7 +33,7 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage>
         ),
       ),
       floatingActionButton: HBFloatingActionButton(
-        onPressed: () {},
+        onPressed: onAddNewHabit,
         child: const HBImage(HBSvgIcons.add),
       ),
       bottomNavigationBar: HBBottomAppBar(

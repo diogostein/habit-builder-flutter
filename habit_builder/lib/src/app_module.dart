@@ -4,6 +4,7 @@ import 'package:habit_builder/src/modules/home/ui/tracking_habits/tracking_habit
 import 'modules/authentication/authentication_module.dart';
 import 'modules/community/community_module.dart';
 import 'modules/courses/course_module.dart';
+import 'modules/habit/habit_module.dart';
 import 'modules/home/home_module.dart';
 import 'modules/onboarding/onboarding_module.dart';
 import 'modules/profile/profile_module.dart';
@@ -23,5 +24,6 @@ class AppModule extends Module {
         ModuleRoute('/community', module: CommunityModule()),
         ModuleRoute('/settings', module: SettingsModule()),
         ModuleRoute('/profile', module: ProfileModule()),
+        ModuleRoute('/habit', module: HabitModule()),
       ];
 }

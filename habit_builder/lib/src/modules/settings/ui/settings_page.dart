@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:habit_builder/src/core/mixin/add_new_habit_event.dart';
 import 'package:habit_builder/src/core/mixin/menu_actions.dart';
 
 import 'widgets/menu_list.dart';
@@ -12,7 +13,8 @@ class SettingsPage extends StatefulWidget {
   State<SettingsPage> createState() => _SettingsPageState();
 }
 
-class _SettingsPageState extends State<SettingsPage> with MenuActions {
+class _SettingsPageState extends State<SettingsPage>
+    with MenuActions, AddNewHabitEvent {
   @override
   Widget build(BuildContext context) {
     return HBSliverScaffold(
@@ -22,7 +24,7 @@ class _SettingsPageState extends State<SettingsPage> with MenuActions {
         titleText: 'Settings',
       ),
       floatingActionButton: HBFloatingActionButton(
-        onPressed: () {},
+        onPressed: onAddNewHabit,
         child: const HBImage(HBSvgIcons.add),
       ),
       bottomNavigationBar: HBBottomAppBar(

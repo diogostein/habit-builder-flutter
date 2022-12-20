@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:habit_builder/src/core/mixin/add_new_habit_event.dart';
 import 'package:habit_builder/src/core/mixin/menu_actions.dart';
 import 'package:habit_builder/src/modules/community/data/community_repository.dart';
 
@@ -13,7 +14,8 @@ class CommunityPage extends StatefulWidget {
   State<CommunityPage> createState() => _CommunityPageState();
 }
 
-class _CommunityPageState extends State<CommunityPage> with MenuActions {
+class _CommunityPageState extends State<CommunityPage>
+    with MenuActions, AddNewHabitEvent {
   final _repository = Modular.get<CommunityRepository>();
 
   List<Post> _posts = [];
@@ -40,7 +42,7 @@ class _CommunityPageState extends State<CommunityPage> with MenuActions {
         ),
       ),
       floatingActionButton: HBFloatingActionButton(
-        onPressed: () {},
+        onPressed: onAddNewHabit,
         child: const HBImage(HBSvgIcons.add),
       ),
       bottomNavigationBar: HBBottomAppBar(

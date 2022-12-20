@@ -5,12 +5,18 @@ class HBCircleIconButton extends StatelessWidget {
   final VoidCallback onPressed;
   final IconData icon;
   final double? iconSize;
+  final Color? iconColor;
+  final Color? backgroundColor;
+  final double? size;
 
   const HBCircleIconButton({
     super.key,
     required this.onPressed,
     required this.icon,
     this.iconSize,
+    this.iconColor,
+    this.backgroundColor,
+    this.size,
   });
 
   factory HBCircleIconButton.back({required VoidCallback onPressed}) {
@@ -33,14 +39,16 @@ class HBCircleIconButton extends StatelessWidget {
       onTap: onPressed,
       customBorder: const CircleBorder(),
       child: Container(
+        width: size,
+        height: size,
         padding: const EdgeInsets.all(HBSpacings.xSmall),
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(.1),
+          color: backgroundColor ?? Colors.black.withOpacity(.1),
           shape: BoxShape.circle,
         ),
         child: Icon(
           icon,
-          color: HBMaterialColors.secondarySwatch,
+          color: iconColor ?? HBMaterialColors.secondarySwatch,
           size: iconSize,
         ),
       ),

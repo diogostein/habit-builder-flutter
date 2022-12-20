@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:habit_builder/src/core/mixin/add_new_habit_event.dart';
 import 'package:habit_builder/src/core/mixin/menu_actions.dart';
 
 import '../data/course_repository.dart';
@@ -14,7 +15,8 @@ class CoursesPage extends StatefulWidget {
   State<CoursesPage> createState() => _CoursesPageState();
 }
 
-class _CoursesPageState extends State<CoursesPage> with MenuActions {
+class _CoursesPageState extends State<CoursesPage>
+    with MenuActions, AddNewHabitEvent {
   final _repository = Modular.get<CourseRepository>();
 
   List<Course> _courses = [];
@@ -35,7 +37,7 @@ class _CoursesPageState extends State<CoursesPage> with MenuActions {
         trailing: HBCircleIconButton(onPressed: () {}, icon: Icons.search),
       ),
       floatingActionButton: HBFloatingActionButton(
-        onPressed: () {},
+        onPressed: onAddNewHabit,
         child: const HBImage(HBSvgIcons.add),
       ),
       bottomNavigationBar: HBBottomAppBar(
