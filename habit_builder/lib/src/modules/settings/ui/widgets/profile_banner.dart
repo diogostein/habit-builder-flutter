@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class ProfileBanner extends StatelessWidget {
   const ProfileBanner({super.key});
@@ -39,7 +40,10 @@ class ProfileBanner extends StatelessWidget {
                 SizedBox(
                   width: 120,
                   height: 40,
-                  child: HBButton('View', onPressed: () {}),
+                  child: HBButton(
+                    'View',
+                    onPressed: () => Modular.to.pushNamed('/profile'),
+                  ),
                 ),
               ],
             ),

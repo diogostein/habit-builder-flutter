@@ -31,9 +31,12 @@ class _CommunityPageState extends State<CommunityPage> with MenuActions {
       headerBar: HBHeaderBar(
         leading: HBCircleIconButton.drawer(onPressed: () {}),
         titleText: 'Community',
-        trailing: HBCircleAvatar.asset(
-          'assets/images/justine-gosling.jpg',
-          placeholderInitials: 'JG',
+        trailing: InkWell(
+          onTap: () => Modular.to.pushNamed('/profile'),
+          child: HBCircleAvatar.asset(
+            'assets/images/justine-gosling.jpg',
+            placeholderInitials: 'JG',
+          ),
         ),
       ),
       floatingActionButton: HBFloatingActionButton(

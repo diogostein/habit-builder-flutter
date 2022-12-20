@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:habit_builder/src/core/mixin/menu_actions.dart';
 
 import 'widgets/habit_day_list.dart';
@@ -22,9 +23,12 @@ class _TrackingHabitsPageState extends State<TrackingHabitsPage>
       headerBar: HBHeaderBar(
         leading: HBCircleIconButton.drawer(onPressed: () {}),
         titleText: 'Homepage',
-        trailing: HBCircleAvatar.asset(
-          'assets/images/justine-gosling.jpg',
-          placeholderInitials: 'JG',
+        trailing: InkWell(
+          onTap: () => Modular.to.pushNamed('/profile'),
+          child: HBCircleAvatar.asset(
+            'assets/images/justine-gosling.jpg',
+            placeholderInitials: 'JG',
+          ),
         ),
       ),
       floatingActionButton: HBFloatingActionButton(
