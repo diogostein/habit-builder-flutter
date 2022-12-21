@@ -103,7 +103,8 @@ class _HBTextFormFieldState extends State<HBTextFormField> {
     return Focus(
       onFocusChange: (hasFocus) => setState(() => _hasFocus = hasFocus),
       child: Padding(
-        padding: widget.margin ?? EdgeInsets.zero,
+        padding:
+            widget.margin ?? const EdgeInsets.only(bottom: HBSpacings.xSmall),
         child: TextFormField(
           controller: widget.controller,
           focusNode: widget.focusNode,

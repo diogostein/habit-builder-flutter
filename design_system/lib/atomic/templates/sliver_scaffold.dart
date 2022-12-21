@@ -5,6 +5,7 @@ import '../../design_system.dart';
 class HBSliverScaffold extends StatelessWidget {
   final Widget? headerBar;
   final bool extendBodyBehindAppBar;
+  final bool? resizeToAvoidBottomInset;
   final Widget? bottomNavigationBar;
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
@@ -20,6 +21,7 @@ class HBSliverScaffold extends StatelessWidget {
     this.floatingActionButtonLocation,
     this.hasBackground = false,
     required this.slivers,
+    this.resizeToAvoidBottomInset,
   });
 
   bool get _extendBody => bottomNavigationBar != null;
@@ -29,6 +31,7 @@ class HBSliverScaffold extends StatelessWidget {
     return Scaffold(
       extendBody: _extendBody,
       extendBodyBehindAppBar: extendBodyBehindAppBar,
+      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation ??

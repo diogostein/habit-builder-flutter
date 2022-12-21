@@ -6,8 +6,8 @@ class CommunityRepository {
         Post(
           id: 1,
           author: Author(
-            name: 'Sophie',
-            image: 'assets/images/sophie-radcliffe.jpg',
+            name: 'Brian',
+            image: 'assets/images/brian-porter.jpg',
           ),
           date: '41m ago',
           message:
@@ -18,7 +18,7 @@ class CommunityRepository {
         Post(
           id: 2,
           author: Author(
-            name: 'Maria',
+            name: 'Sophie',
             image: 'assets/images/sophie-radcliffe.jpg',
           ),
           date: '41m ago',
@@ -30,8 +30,8 @@ class CommunityRepository {
         Post(
           id: 2,
           author: Author(
-            name: 'Kate',
-            image: 'assets/images/sophie-radcliffe.jpg',
+            name: 'Anne',
+            image: 'assets/images/anne-chambers.jpg',
           ),
           date: '41m ago',
           message:

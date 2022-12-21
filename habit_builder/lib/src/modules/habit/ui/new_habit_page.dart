@@ -1,6 +1,11 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:habit_builder/src/modules/habit/ui/widgets/week_day_with_habit_square.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:habit_builder/src/core/mixin/menu_actions.dart';
+import 'package:habit_builder/src/modules/habit/ui/widgets/habit_frequency_card.dart';
+
+import 'widgets/notification_card.dart';
+import 'widgets/reminder_card.dart';
 
 class NewHabitPage extends StatefulWidget {
   const NewHabitPage({Key? key}) : super(key: key);
@@ -9,14 +14,23 @@ class NewHabitPage extends StatefulWidget {
   State<NewHabitPage> createState() => _NewHabitPageState();
 }
 
-class _NewHabitPageState extends State<NewHabitPage> {
+class _NewHabitPageState extends State<NewHabitPage> with MenuActions {
   @override
   Widget build(BuildContext context) {
     return HBSliverScaffold(
       hasBackground: true,
+      resizeToAvoidBottomInset: false,
       headerBar: const HBHeaderBar(
         automaticallyImplyLeading: true,
         titleText: 'New Habit',
+      ),
+      floatingActionButton: HBFloatingActionButton(
+        onPressed: () => Modular.to.pop(),
+        child: const HBImage(HBSvgIcons.check),
+      ),
+      bottomNavigationBar: HBBottomAppBar(
+        onMenuIconPressed: onMenuIconPressed,
+        activeMenuIcon: HBMenuIconType.home,
       ),
       slivers: [
         SliverToBoxAdapter(
@@ -29,7 +43,9 @@ class _NewHabitPageState extends State<NewHabitPage> {
                   children: [
                     const Expanded(
                       child: HBTextFormField(
+                        margin: EdgeInsets.zero,
                         hintText: 'Enter habit name',
+                        autofocus: true,
                       ),
                     ),
                     const HBGapWidth(),
@@ -42,87 +58,12 @@ class _NewHabitPageState extends State<NewHabitPage> {
                     ),
                   ],
                 ),
-                const HBGapHeight(),
-                HBFlatCard(
-                  margin: EdgeInsets.zero,
-                  padding: EdgeInsets.zero,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(HBSpacings.regular),
-                        child: Row(
-                          children: [
-                            const Expanded(
-                              child: HBText('Habit Frequency'),
-                            ),
-                            HBText(
-                              'Custom',
-                              style: HBTextStyles.body.copyWith(
-                                color: HBMaterialColors.primarySwatch,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const Icon(
-                              Icons.chevron_right,
-                              color: HBMaterialColors.primarySwatch,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const HBDivider(),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: IntrinsicHeight(
-                          child: Row(
-                            children: const [
-                              WeekDayWithHabitSquare(
-                                padding: EdgeInsets.all(HBSpacings.small),
-                                weekDayText: 'SUN',
-                                habitSquareType: HBHabitSquareType.full,
-                              ),
-                              HBVerticalDivider(),
-                              WeekDayWithHabitSquare(
-                                padding: EdgeInsets.all(HBSpacings.small),
-                                weekDayText: 'MON',
-                                habitSquareType: HBHabitSquareType.half,
-                              ),
-                              HBVerticalDivider(),
-                              WeekDayWithHabitSquare(
-                                padding: EdgeInsets.all(HBSpacings.small),
-                                weekDayText: 'TUE',
-                                habitSquareType: HBHabitSquareType.half,
-                              ),
-                              HBVerticalDivider(),
-                              WeekDayWithHabitSquare(
-                                padding: EdgeInsets.all(HBSpacings.small),
-                                weekDayText: 'WED',
-                                habitSquareType: HBHabitSquareType.full,
-                              ),
-                              HBVerticalDivider(),
-                              WeekDayWithHabitSquare(
-                                padding: EdgeInsets.all(HBSpacings.small),
-                                weekDayText: 'THU',
-                                habitSquareType: HBHabitSquareType.half,
-                              ),
-                              HBVerticalDivider(),
-                              WeekDayWithHabitSquare(
-                                padding: EdgeInsets.all(HBSpacings.small),
-                                weekDayText: 'FRI',
-                                habitSquareType: HBHabitSquareType.full,
-                              ),
-                              HBVerticalDivider(),
-                              WeekDayWithHabitSquare(
-                                padding: EdgeInsets.all(HBSpacings.small),
-                                weekDayText: 'SAT',
-                                habitSquareType: HBHabitSquareType.full,
-                              ),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                const HBGapHeight.xSmall(),
+                const HabitFrequencyCard(),
+                const HBGapHeight.xSmall(),
+                const ReminderCard(),
+                const HBGapHeight.xSmall(),
+                const NotificationCard(),
               ],
             ),
           ),

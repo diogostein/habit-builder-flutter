@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class MenuList extends StatelessWidget {
   const MenuList({Key? key}) : super(key: key);
@@ -65,6 +66,14 @@ class MenuList extends StatelessWidget {
             ),
             iconData: Icons.info,
             titleText: 'About',
+          ),
+          HBMenuButton(
+            onPressed: () => Modular.to.navigate('/authentication'),
+            margin: const EdgeInsets.symmetric(
+              vertical: HBSpacings.xxSmall,
+            ),
+            iconData: Icons.exit_to_app,
+            titleText: 'Logout',
           ),
         ],
       ),

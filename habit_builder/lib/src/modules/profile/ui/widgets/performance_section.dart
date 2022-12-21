@@ -26,7 +26,7 @@ class PerformanceSection extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: HBText.muted('Name'),
+            subtitle: HBText.muted('justinegoslin@gmail.com'),
           ),
           const HBDivider(),
           Row(
