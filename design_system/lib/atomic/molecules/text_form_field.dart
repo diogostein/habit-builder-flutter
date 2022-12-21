@@ -122,7 +122,7 @@ class _HBTextFormFieldState extends State<HBTextFormField> {
           onEditingComplete: widget.onEditingComplete,
           inputFormatters: widget.inputFormatters,
           validator: widget.validator,
-          decoration: HBDecorations.inputDecoration.copyWith(
+          decoration: HBInputDecorations.inputDecoration.copyWith(
             fillColor: widget.backgroundColor ?? Colors.white,
             hintText: widget.hintText,
             prefixIcon: widget.prefixIcon != null

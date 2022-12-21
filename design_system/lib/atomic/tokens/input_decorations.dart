@@ -1,7 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-abstract class HBDecorations {
+abstract class HBInputDecorations {
   static final inputDecoration = InputDecoration(
     contentPadding: const EdgeInsets.all(HBSpacings.regular),
     isDense: true,

@@ -2,7 +2,7 @@ import 'package:design_system/atomic/tokens/colors.dart';
 import 'package:design_system/atomic/tokens/dimensions.dart';
 import 'package:flutter/material.dart';
 
-import '../tokens/styles.dart';
+import '../../design_system.dart';
 
 class HBText extends StatelessWidget {
   final String data;
